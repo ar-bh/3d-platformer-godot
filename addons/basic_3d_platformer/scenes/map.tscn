@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://cohkxdv3wdufb"]
+
+[ext_resource type="Texture2D" uid="uid://btyxb4yqbqxo4" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_orange_512x512.png" id="1_g4xmv"]
+[ext_resource type="Texture2D" uid="uid://d3ribeyeryv0y" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_blue_512x512.png" id="2_e4r43"]
+[ext_resource type="Texture2D" uid="uid://btdr6a1xha0pq" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_lime_512x512.png" id="3_1h8aw"]
+[ext_resource type="Texture2D" uid="uid://yikvuhj1po2v" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_yellow_512x512.png" id="4_llyta"]
+[ext_resource type="Texture2D" uid="uid://bted8u547w8x7" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_red_512x512.png" id="5_88k8g"]
+[ext_resource type="Texture2D" uid="uid://bhxkdfnu0vhb0" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_cyan_512x512.png" id="6_1cw0f"]
+[ext_resource type="Texture2D" uid="uid://dsycd8jqgn5os" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_white_512x512.png" id="7_7crog"]
+[ext_resource type="Texture2D" uid="uid://5758okjbksoi" path="res://addons/basic_3d_platformer/assets/godot prototypes/checker_pink_512x512.png" id="8_j6br4"]
+
+[sub_resource type="StandardMaterial3D" id="mat_orange"]
+albedo_texture = ExtResource("1_g4xmv")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7glny"]
+sky_top_color = Color(0.3137255, 0.23529412, 1, 1)
+sky_horizon_color = Color(0.74509805, 0.8627451, 1, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.74509805, 0.8627451, 1, 1)
+
+[sub_resource type="Sky" id="Sky_iemch"]
+sky_material = SubResource("ProceduralSkyMaterial_7glny")
+
+[sub_resource type="Environment" id="Environment_mn11d"]
+background_mode = 2
+sky = SubResource("Sky_iemch")
+ambient_light_source = 3
+ambient_light_energy = 0.8
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.74509805, 0.8627451, 1, 1)
+fog_density = 0.004
+fog_aerial_perspective = 0.5
+
+[sub_resource type="StandardMaterial3D" id="mat_blue"]
+albedo_texture = ExtResource("2_e4r43")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="mat_lime"]
+albedo_texture = ExtResource("3_1h8aw")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="mat_yellow"]
+albedo_texture = ExtResource("4_llyta")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="mat_red"]
+albedo_texture = ExtResource("5_88k8g")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="mat_cyan"]
+albedo_texture = ExtResource("6_1cw0f")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="mat_white"]
+albedo_texture = ExtResource("7_7crog")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="mat_pink"]
+albedo_texture = ExtResource("8_j6br4")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="Map" type="Node3D" unique_id=1441857511]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1480062163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+use_collision = true
+size = Vector3(48, 10, 48)
+material = SubResource("mat_orange")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=754659190]
+environment = SubResource("Environment_mn11d")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=2126018630]
+transform = Transform3D(0.76604444, -0.45451945, 0.45451945, 0, 0.70710677, 0.70710677, -0.6427876, -0.5416752, 0.5416752, 0, 0, 0)
+light_color = Color(1, 0.95686275, 0.8627451, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Playground" type="Node3D" parent="." unique_id=1854820388]
+
+[node name="StairsLow" type="CSGBox3D" parent="Playground" unique_id=997830882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0)
+use_collision = true
+size = Vector3(3, 1, 3)
+material = SubResource("mat_blue")
+
+[node name="StairsMid" type="CSGBox3D" parent="Playground" unique_id=1906966181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 1.5, 0)
+use_collision = true
+size = Vector3(3, 1, 3)
+material = SubResource("mat_lime")
+
+[node name="StairsHigh" type="CSGBox3D" parent="Playground" unique_id=701136881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.5, 0)
+use_collision = true
+size = Vector3(3, 1, 3)
+material = SubResource("mat_yellow")
+
+[node name="StairsTop" type="CSGBox3D" parent="Playground" unique_id=359799594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 3, 0)
+use_collision = true
+size = Vector3(4, 1, 4)
+material = SubResource("mat_red")
+
+[node name="GapEasyA" type="CSGBox3D" parent="Playground" unique_id=618075221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 8)
+use_collision = true
+size = Vector3(4, 1, 4)
+material = SubResource("mat_cyan")
+
+[node name="GapEasyB" type="CSGBox3D" parent="Playground" unique_id=1038413027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 14)
+use_collision = true
+size = Vector3(4, 1, 4)
+material = SubResource("mat_cyan")
+
+[node name="GapLong" type="CSGBox3D" parent="Playground" unique_id=555442575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 22)
+use_collision = true
+size = Vector3(4, 2, 4)
+material = SubResource("mat_cyan")
+
+[node name="Ramp" type="CSGPolygon3D" parent="Playground" unique_id=1222772115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 4)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 12, 0, 12, 3)
+depth = 5.0
+material = SubResource("mat_white")
+
+[node name="Ledge" type="CSGBox3D" parent="Playground" unique_id=1184413841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -8)
+use_collision = true
+size = Vector3(6, 4, 6)
+material = SubResource("mat_pink")
+
+[node name="NarrowBeam" type="CSGBox3D" parent="Playground" unique_id=1040991267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.25, 10)
+use_collision = true
+size = Vector3(1, 0.5, 10)
+material = SubResource("mat_pink")
+
+[node name="CameraWall" type="CSGBox3D" parent="Playground" unique_id=504234527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -8)
+use_collision = true
+size = Vector3(1, 4, 8)
+material = SubResource("mat_yellow")
