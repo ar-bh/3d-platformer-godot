@@ -4,6 +4,10 @@ A clean third-person 3D platformer movement system built for **Godot 4**
 
 ![Asset Logo](addons/basic_3d_platformer/assets/preview1.png)
 
+# **Demo**
+
+[![Watch the demo](https://img.youtube.com/vi/hTecTXTglr4/hqdefault.jpg)](https://www.youtube.com/watch?v=hTecTXTglr4)
+
 ---
 
 # **General**
@@ -114,8 +118,8 @@ If they are missing (the player controller does not work), go to **Project -> Pr
 
 # **Requests & Contributing**
 
-- **Bug Reports**: Open an issue in the [Issues](https://github.com/ar-bh/basic-3d-platformer-godot/issues) section.
-- **Feature Requests**: Share ideas in the [Discussions](https://github.com/ar-bh/basic-3d-platformer-godot/discussions) section.
+- **Bug Reports**: Open an issue in the [Issues](https://github.com/ar-bh/3d-platformer-godot/issues) section.
+- **Feature Requests**: Share ideas in the [Discussions](https://github.com/ar-bh/3d-platformer-godot/discussions) section.
 
 # **License**
 
